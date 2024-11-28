@@ -20,7 +20,6 @@ sampleVertex <- function(n) {
   midpoint = c(x=0.5, y=0.5 / tan(pi / n))
   radius = 0.5 / sin(pi / n)
   angle = 2 * pi / n * (sample(n, 1))
-
   midpoint + radius * c(sin(angle), cos(angle))
 }
 
@@ -31,5 +30,5 @@ sampleVertex <- function(n) {
 #   * step.size = 1 --> end up at `to`
 #   * step.size = 0.5 --> halfway between `from` and `to`
 stepToVertex <- function(from, to, step.size) {
-  c(x=0, y=0)
+  from * (1 - step.size) + to * step.size
 }
